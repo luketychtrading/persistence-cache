@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/LionC/persistent-cache#readme",
   "dependencies": {
-    "mkdirp-no-bin": "^0.5.1",
+    "mkdirp-no-bin": "^0.5.1"
   },
   "devDependencies": {
     "mocha": "^2.5.3",
