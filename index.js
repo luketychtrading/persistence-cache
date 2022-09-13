@@ -163,8 +163,10 @@ function cache(options) {
     }
 
     function unlink(cb) {
-        if(persist)
-            return fs.rmdir(cacheDir, safeCb(cb));
+        if(persist) {
+            fs.rmSync(cacheDir, { recursive: true, force: true })
+            return safe(cb)
+        }
 
         safeCb(cb)(null);
     }
