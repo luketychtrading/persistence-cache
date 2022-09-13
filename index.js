@@ -1,7 +1,6 @@
 var path = require('path');
 var fs = require('fs');
 var mkdirp = require('mkdirp-no-bin');
-var rmdir = require('rmdir');
 
 function exists(dir) {
     try {
@@ -165,7 +164,7 @@ function cache(options) {
 
     function unlink(cb) {
         if(persist)
-            return rmdir(cacheDir, safeCb(cb));
+            return fs.rmdir(cacheDir, safeCb(cb));
 
         safeCb(cb)(null);
     }
