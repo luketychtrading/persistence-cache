@@ -164,7 +164,7 @@ function cache(options) {
 
     function unlink(cb) {
         if(persist) {
-            fs.rmSync(cacheDir, { recursive: true, force: true })
+            fs.rm(cacheDir, { recursive: true, force: true })
             return safe(cb)
         }
 
